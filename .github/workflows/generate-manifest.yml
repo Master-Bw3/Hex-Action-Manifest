@@ -1,0 +1,60 @@
+name: Generate Manifest
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+  # add more branches here to enable deploying the web book to Pages from those branches
+  # eg. '["main", "1.19"]'
+  MAIN_BRANCHES: '["main"]'
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      is-main-branch: |-
+        ${{
+          github.event_name != 'pull_request'
+          && contains(fromJson(env.MAIN_BRANCHES), env.BRANCH_NAME)
+        }}
+    steps:
+      - name: Print message so the workflow isn't invalid
+        run: 'echo "Hello World!"'
+
+  release-project:
+    name: Create Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: $date ${{ github.run_number }}
+          release_name: $date ${{ github.run_number }}
+          draft: false
+          prerelease: false
+
+  generate-manifest:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+      - uses: gradle/actions/setup-gradle@v3
+
+      - name: Build mod
+        run: ./gradlew build
+
+      - name: Game Test
+        run: mkdir Fabric/game-test && echo "eula=true" >> build/gametest/eula.txt && ./gradlew runGameTest

@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Common/Hex_Action_Manifest.Common.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Common/Hex_Action_Manifest.Common.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Common/Hex_Action_Manifest.Common.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Common/Hex_Action_Manifest.Common.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Fabric/Hex_Action_Manifest.Fabric.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Fabric/Hex_Action_Manifest.Fabric.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Fabric/Hex_Action_Manifest.Fabric.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Fabric/Hex_Action_Manifest.Fabric.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Forge/Hex_Action_Manifest.Forge.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Forge/Hex_Action_Manifest.Forge.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Forge/Hex_Action_Manifest.Forge.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Forge/Hex_Action_Manifest.Forge.test.iml" />
     </modules>

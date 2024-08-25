@@ -21,6 +21,10 @@ jobs:
       contents: write
 
     steps:
+      - name: get date
+        id: step_one
+        run: |
+          echo "date=$date" >> $GITHUB_ENV
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Create Release
@@ -30,7 +34,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.run_number }}
-          release_name: $date ${{ github.run_number }}
+          release_name: ${{ env.date }} ${{ github.run_number }}
           draft: false
           prerelease: false
 

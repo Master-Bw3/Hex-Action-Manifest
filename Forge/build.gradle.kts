@@ -32,7 +32,7 @@ loom {
     }
 }
 
-hex_action_manifestModDependencies {
+hexactionmanifestModDependencies {
     // expand versions in mods.toml
     filesMatching.add("META-INF/mods.toml")
 

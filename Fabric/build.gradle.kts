@@ -1,12 +1,28 @@
 plugins {
     id("hex_action_manifest.platform")
+
 }
 
 architectury {
     fabric()
 }
 
-hex_action_manifestModDependencies {
+loom {
+    runs {
+        create("gameTestServer") {
+            name("Fabric GameTest")
+            server()
+            vmArg("-ea")
+            property("fabric-api.GameTest".lowercase())
+            property("fabric-api.GameTest.report-file".lowercase(), "game-test/test-results/game_test.xml")
+            property("fabric-tag-conventions-v2.missingTagTranslationWarning", "VERBOSE")
+            runDir = "game-test"
+            source(sourceSets["main"])
+        }
+    }
+}
+
+hexactionmanifestModDependencies {
     // expand versions in fabric.mod.json
     filesMatching.add("fabric.mod.json")
 

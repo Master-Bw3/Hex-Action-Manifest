@@ -13,18 +13,6 @@ env:
   MAIN_BRANCHES: '["main"]'
 
 jobs:
-  setup:
-    runs-on: ubuntu-latest
-    outputs:
-      is-main-branch: |-
-        ${{
-          github.event_name != 'pull_request'
-          && contains(fromJson(env.MAIN_BRANCHES), env.BRANCH_NAME)
-        }}
-    steps:
-      - name: Print message so the workflow isn't invalid
-        run: 'echo "Hello World!"'
-
   release-project:
     name: Create Release
     runs-on: ubuntu-latest
@@ -43,7 +31,7 @@ jobs:
           prerelease: false
 
   generate-manifest:
-    needs: setup
+    needs: release-project
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

@@ -46,7 +46,7 @@ jobs:
       - uses: gradle/actions/setup-gradle@v3
 
       - name: Build mod
-        run: ./gradlew build
+        run: chmod +x ./gradlew && ./gradlew build
 
       - name: Game Test
         run: mkdir Fabric/game-test && echo "eula=true" >> build/gametest/eula.txt && ./gradlew runGameTest

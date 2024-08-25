@@ -1,0 +1,19 @@
+author: Master-Bw3
+book_id: "hex_action_manifest:hex_action_manifestbook"
+default_branch: main
+github_repo: Hex-Action-Manifest
+gradle_mod_version_key: modVersion
+hexdoc_mod_plugin_classname: HexActionManifestModPlugin
+hexdoc_plugin_classname: HexActionManifestPlugin
+java_lang:
+  ext: java
+  src: java
+java_package: mod/master_bw3/hex_action_manifest
+mod_display_name: Hex Action Manifest
+modid: hex_action_manifest
+multiloader: true
+pages_url: https://master-bw3.github.io/Hex-Action-Manifest
+pattern_regex:
+  regex: '(?P<is_per_world>register|registerPerWorld)\(HexPattern\.fromAngles\("(?P<signature>[qweasd]+)",\s*HexDir\.(?P<startdir>\w+)\),\s*"(?P<name>[^"]+)"?'
+  per_world_value: registerPerWorld
+pattern_registry: registry/HexActionManifestPatterns.java

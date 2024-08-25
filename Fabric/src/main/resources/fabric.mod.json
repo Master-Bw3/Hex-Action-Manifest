@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "hex_action_manifest",
+  "version": "${modVersion}",
+  "name": "Hex Action Manifest",
+  "description": "Hex Action Manifest addon for Hex Casting",
+  "authors": [
+    "Master-Bw3"
+  ],
+  "contact": {
+    "homepage": "https://master-bw3.github.io/Hex-Action-Manifest",
+    "sources": "https://github.com/Master-Bw3/Hex-Action-Manifest"
+  },
+  "license": "MIT",
+  "icon": "icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [{
+      "adapter": "kotlin",
+      "value": "mod.master_bw3.hex_action_manifest.fabric.FabricHexActionManifest"
+    }],
+    "client": [{
+      "adapter": "kotlin",
+      "value": "mod.master_bw3.hex_action_manifest.fabric.FabricHexActionManifestClient"
+    }],
+    "modmenu": [{
+      "adapter": "kotlin",
+      "value": "mod.master_bw3.hex_action_manifest.fabric.FabricHexActionManifestModMenu"
+    }]
+  },
+  "mixins": [
+    "hex_action_manifest-common.mixins.json"
+  ],
+  "depends": {
+    "minecraft": "${versions.minecraft}",
+    "fabricloader": ">=${versions.fabric_loader}",
+    "fabric-api": ">=${versions.fabric_api}",
+    "fabric-language-kotlin": ">=${versions.kotlin_fabric}",
+    "architectury": ">=${versions.architectury}",
+    "hexcasting": ">=${versions.hexcasting}",
+    "cloth-config": ">=${versions.clothConfig}"
+  },
+  "suggests": {
+    "modmenu": ">=${versions.modMenu}"
+  }
+}

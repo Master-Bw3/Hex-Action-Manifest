@@ -30,12 +30,6 @@ jobs:
       - name: Run DataGen
         run: timeout 2m ./gradlew :Fabric:runDataGen || exit 0 #janky fix for datagen not ending for some reason
 
-      - name: Upload test results
-        uses: actions/upload-artifact@v3
-        with:
-          name: test-results
-          path: Fabric/game-test/game-test/test-results/game_test.xml
-
       - name: Upload manifest
         uses: actions/upload-artifact@v3
         with:

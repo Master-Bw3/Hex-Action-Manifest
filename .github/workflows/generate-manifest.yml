@@ -23,8 +23,7 @@ jobs:
     steps:
       - name: get date
         id: step_one
-        run: |
-          echo "date=$date" >> $GITHUB_ENV
+        run: echo "date=$date" >> $GITHUB_ENV
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Create Release

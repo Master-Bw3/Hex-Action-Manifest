@@ -29,14 +29,11 @@ jobs:
       - name: Run GameTest
         run: mkdir echo "eula=true" >> Fabric/game-test/eula.txt && ./gradlew :Fabric:runGameTestServer
 
-      - name: Print game test result
-        run: cat ./Fabric/game-test/game-test/test-results/game_test.xml
-
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
           name: manifest
-          path: Fabric/game-test/game-test/test-results/hex_action_manifest.json
+          path: Fabric/game-test/game-test/test-results
 
   release-project:
     name: Create Release

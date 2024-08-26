@@ -41,7 +41,7 @@ jobs:
       - uses: gradle/actions/setup-gradle@v3
 
       - name: Build mod
-        run: ./gradlew :Fabric:build
+        run: ./gradlew build
 
       # literally no idea why the mkdir is needed, but the workflow fails without it :/
       - name: Check if datagen needs to be run

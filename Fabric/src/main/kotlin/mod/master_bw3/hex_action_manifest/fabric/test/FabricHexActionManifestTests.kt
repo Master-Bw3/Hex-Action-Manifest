@@ -14,6 +14,7 @@ import net.minecraft.test.GameTest
 import net.minecraft.test.TestContext
 import net.minecraft.text.Text
 import net.minecraft.util.Identifier
+import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.Paths
 import kotlin.io.path.writeText
@@ -21,7 +22,8 @@ import kotlin.io.path.writeText
 
 class FabricHexActionManifestTests : FabricGameTest {
     companion object {
-        private val outputFolder: Path = FabricLoader.getInstance().gameDir.resolve(Paths.get("game-test/test-results"))
+        private val outputFolder: Path =
+            FabricLoader.getInstance().gameDir.resolve(Paths.get("game-test/test-results")).also(Files::createDirectories)
 
         @JvmStatic
         @GameTest(templateName = "empty")

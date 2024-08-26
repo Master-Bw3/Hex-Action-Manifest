@@ -41,7 +41,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: generate-manifest
 
-    permissions: write-all
+    permissions:
+      write-all
 
     steps:
       - name: Download artifact
@@ -51,6 +52,12 @@ jobs:
 
       - name: Test artifact download
         run: ls /home/runner/work/Hex-Action-Manifest/Hex-Action-Manifest
+
+      - name: Test 2
+        run: ls ./
+
+      - name: Test 3
+        run: cat /home/runner/work/Hex-Action-Manifest/Hex-Action-Manifest/manifest
 
       - name: get date
         id: step_one
@@ -76,6 +83,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create-release.outputs.upload_url }}
-          asset_path: ./manifest.json
+          asset_path: /home/runner/work/Hex-Action-Manifest/Hex-Action-Manifest/manifest
           asset_name: hex_action_manifest_v${{ github.run_number }}.json
           asset_content_type: text/json

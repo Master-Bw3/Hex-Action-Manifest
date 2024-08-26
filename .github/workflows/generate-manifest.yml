@@ -27,8 +27,8 @@ jobs:
       - name: Build mod
         run: chmod +x ./gradlew && ./gradlew :Fabric:build
 
-      - name: Run GameTest
-        run: mkdir echo "eula=true" >> Fabric/game-test/eula.txt && ./gradlew :Fabric:runGameTestServer
+      - name: Run DataGen
+        run: timeout 2m ./gradlew :Fabric:runDataGen || exit 0 #janky fix for datagen not ending for some reason
 
       - name: Upload test results
         uses: actions/upload-artifact@v3
@@ -40,7 +40,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: manifest
-          path: Fabric/game-test/game-test/test-results/hex_action_manifest.json
+          path: Fabric/src/generated/data/data/hex_action_manifest/hex_actions/manifest.json
 
   release-project:
     name: Create Release
@@ -83,6 +83,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create-release.outputs.upload_url }}
-          asset_path: /home/runner/work/Hex-Action-Manifest/Hex-Action-Manifest/manifest.json
+          asset_path: /home/runner/work/Hex-Action-Manifest/Hex-Action-Manifest/hex_action_manifest.json
           asset_name: hex_action_manifest_v${{ github.run_number }}.json
           asset_content_type: text/json

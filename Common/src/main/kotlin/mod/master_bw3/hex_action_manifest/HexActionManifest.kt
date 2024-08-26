@@ -1,8 +1,9 @@
 package mod.master_bw3.hex_action_manifest
 
-import net.minecraft.util.Identifier
+import net.minecraft.resources.ResourceLocation
 import org.apache.logging.log4j.LogManager
 import org.apache.logging.log4j.Logger
+import at.petrak.hexcasting.datagen.recipe.HexplatRecipes
 
 object HexActionManifest {
 
@@ -11,7 +12,7 @@ object HexActionManifest {
     @JvmField
     val LOGGER: Logger = LogManager.getLogger(MODID)
 
-    fun id(path: String) = Identifier(MODID, path)
+    fun id(path: String) = ResourceLocation(MODID, path)
 
     fun init() {
     }

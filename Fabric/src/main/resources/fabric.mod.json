@@ -23,9 +23,9 @@
       "adapter": "kotlin",
       "value": "mod.master_bw3.hex_action_manifest.fabric.FabricHexActionManifestClient"
     }],
-    "fabric-gametest": [{
+    "fabric-datagen": [{
       "adapter": "kotlin",
-      "value": "mod.master_bw3.hex_action_manifest.fabric.test.FabricHexActionManifestTests"
+      "value": "mod.master_bw3.hex_action_manifest.fabric.datagen.FabricHexActionManifestDataGen"
     }]
   },
   "mixins": [

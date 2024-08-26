@@ -3,21 +3,28 @@ plugins {
 
 }
 
+val modId: String by project
+
 architectury {
     fabric()
 }
 
 loom {
     runs {
-        create("gameTestServer") {
-            name("Fabric GameTest")
+        create("fabricDataGen") {
+            name("Fabric DataGen")
             server()
-            vmArg("-ea")
-            property("fabric-api.GameTest".lowercase())
-            property("fabric-api.GameTest.report-file".lowercase(), "game-test/test-results/game_test.xml")
-            property("fabric-tag-conventions-v2.missingTagTranslationWarning", "VERBOSE")
+            vmArg("-Dfabric-api.datagen")
+            vmArg("-Dfabric-api.datagen.modid=${modId}")
+            vmArg("-Dfabric-api.datagen.output-dir=${file("src/generated/data")}")
             runDir = "game-test"
             source(sourceSets["main"])
+
+
+            configureEach {
+                runDir = "Fabric/run"
+                ideConfigGenerated(true)
+            }
         }
     }
 }

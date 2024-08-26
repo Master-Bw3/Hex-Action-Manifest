@@ -5,8 +5,8 @@
       <profile name="Gradle Imported" enabled="true">
         <outputRelativeToContentRoot value="true" />
         <option name="defaultObfuscationEnv" value="named:intermediary" />
-        <option name="inMapFileNamedIntermediary" value="$USER_HOME$/.gradle/caches/fabric-loom/1.20.1/net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2/mappings-srg.tiny" />
-        <option name="outMapFileNamedIntermediary" value="$PROJECT_DIR$/Common/build/loom-cache/mixin-map-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.main.tiny" />
+        <option name="inMapFileNamedIntermediary" value="$USER_HOME$/.gradle/caches/fabric-loom/1.20.1/loom.mappings.1_20_1.layered+hash.1889807799-v2/mappings-srg.tiny" />
+        <option name="outMapFileNamedIntermediary" value="$PROJECT_DIR$/Common/build/loom-cache/mixin-map-loom.mappings.1_20_1.layered+hash.1889807799-v2.main.tiny" />
         <option name="outRefMapFile" value="$PROJECT_DIR$/Common/build/classes/java/main/hex_action_manifest-common-Common-refmap.json" />
         <option name="quiet" value="true" />
         <processorPath useClasspath="false">
@@ -21,24 +21,8 @@
       <profile name="Gradle Imported" enabled="true">
         <outputRelativeToContentRoot value="true" />
         <option name="defaultObfuscationEnv" value="named:intermediary" />
-        <option name="inMapFileNamedIntermediary" value="$USER_HOME$/.gradle/caches/fabric-loom/1.20.1/net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2/mappings.tiny" />
-        <option name="outMapFileNamedIntermediary" value="$PROJECT_DIR$/Fabric/build/loom-cache/mixin-map-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.main.tiny" />
-        <option name="outRefMapFile" value="$PROJECT_DIR$/Fabric/build/classes/java/main/hex_action_manifest-fabric-Fabric-refmap.json" />
-        <option name="quiet" value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-commons/9.5/19ab5b5800a3910d30d3a3e64fdb00fd0cb42de0/asm-commons-9.5.jar" />
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-util/9.5/64b5a1fc8c1b15ed2efd6a063e976bc8d3dc5ffe/asm-util-9.5.jar" />
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-analysis/9.5/490bacc77de7cbc0be1a30bb3471072d705be4a4/asm-analysis-9.5.jar" />
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-tree/9.5/fd33c8b6373abaa675be407082fdfda35021254a/asm-tree-9.5.jar" />
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/9.5/dc6ea1875f4d64fbc85e1691c95b96a3d8569c90/asm-9.5.jar" />
-        </processorPath>
-        <module name="Hex_Action_Manifest.Fabric.main" />
-      </profile>
-      <profile name="Gradle Imported" enabled="true">
-        <outputRelativeToContentRoot value="true" />
-        <option name="defaultObfuscationEnv" value="named:intermediary" />
-        <option name="inMapFileNamedIntermediary" value="$USER_HOME$/.gradle/caches/fabric-loom/1.20.1/net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2-forge-1.20.1-47.2.0/mappings-mixin-srg.tiny" />
-        <option name="outMapFileNamedIntermediary" value="$PROJECT_DIR$/Forge/build/loom-cache/mixin-map-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2-forge-1.20.1-47.2.0.main.tiny" />
+        <option name="inMapFileNamedIntermediary" value="$USER_HOME$/.gradle/caches/fabric-loom/1.20.1/loom.mappings.1_20_1.layered+hash.1889807799-v2-forge-1.20.1-47.2.0/mappings-mixin-srg.tiny" />
+        <option name="outMapFileNamedIntermediary" value="$PROJECT_DIR$/Forge/build/loom-cache/mixin-map-loom.mappings.1_20_1.layered+hash.1889807799-v2-forge-1.20.1-47.2.0.main.tiny" />
         <option name="outRefMapFile" value="$PROJECT_DIR$/Forge/build/classes/java/main/hex_action_manifest-forge-Forge-refmap.json" />
         <option name="quiet" value="true" />
         <processorPath useClasspath="false">
@@ -49,6 +33,22 @@
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/9.5/dc6ea1875f4d64fbc85e1691c95b96a3d8569c90/asm-9.5.jar" />
         </processorPath>
         <module name="Hex_Action_Manifest.Forge.main" />
+      </profile>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <option name="defaultObfuscationEnv" value="named:intermediary" />
+        <option name="inMapFileNamedIntermediary" value="$USER_HOME$/.gradle/caches/fabric-loom/1.20.1/loom.mappings.1_20_1.layered+hash.1889807799-v2/mappings.tiny" />
+        <option name="outMapFileNamedIntermediary" value="$PROJECT_DIR$/Fabric/build/loom-cache/mixin-map-loom.mappings.1_20_1.layered+hash.1889807799-v2.main.tiny" />
+        <option name="outRefMapFile" value="$PROJECT_DIR$/Fabric/build/classes/java/main/hex_action_manifest-fabric-Fabric-refmap.json" />
+        <option name="quiet" value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-commons/9.5/19ab5b5800a3910d30d3a3e64fdb00fd0cb42de0/asm-commons-9.5.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-util/9.5/64b5a1fc8c1b15ed2efd6a063e976bc8d3dc5ffe/asm-util-9.5.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-analysis/9.5/490bacc77de7cbc0be1a30bb3471072d705be4a4/asm-analysis-9.5.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-tree/9.5/fd33c8b6373abaa675be407082fdfda35021254a/asm-tree-9.5.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/9.5/dc6ea1875f4d64fbc85e1691c95b96a3d8569c90/asm-9.5.jar" />
+        </processorPath>
+        <module name="Hex_Action_Manifest.Fabric.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="17" />

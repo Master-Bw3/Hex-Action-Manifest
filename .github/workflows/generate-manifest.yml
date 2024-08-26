@@ -57,7 +57,7 @@ jobs:
         run: ls ./
 
       - name: Test 3
-        run: cat /home/runner/work/Hex-Action-Manifest/Hex-Action-Manifest/manifest
+        run: cat ./manifest.json
 
       - name: get date
         id: step_one
@@ -83,6 +83,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create-release.outputs.upload_url }}
-          asset_path: /home/runner/work/Hex-Action-Manifest/Hex-Action-Manifest/manifest
+          asset_path: ./manifest.json
           asset_name: hex_action_manifest_v${{ github.run_number }}.json
           asset_content_type: text/json

@@ -56,7 +56,7 @@ jobs:
           name: manifest
 
       - name: Test artifact download
-        run: ls -R
+        run: ls /home/runner/work/Hex-Action-Manifest/Hex-Action-Manifest
 
       - name: get date
         id: step_one
@@ -82,4 +82,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create-release.outputs.upload_url }}
-          asset_path:
+          asset_path: /home/runner/work/Hex-Action-Manifest/Hex-Action-Manifest/manifest.json

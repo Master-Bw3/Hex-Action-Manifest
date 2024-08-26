@@ -29,11 +29,17 @@ jobs:
       - name: Run GameTest
         run: mkdir echo "eula=true" >> Fabric/game-test/eula.txt && ./gradlew :Fabric:runGameTestServer
 
-      - name: Upload artifact
+      - name: Upload test results
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-results
+          path: Fabric/game-test/game-test/test-results/game_test.xml
+
+      - name: Upload manifest
         uses: actions/upload-artifact@v3
         with:
           name: manifest
-          path: Fabric/game-test/game-test/test-results
+          path: Fabric/game-test/game-test/test-results/hex_action_manifest.json
 
   release-project:
     name: Create Release
@@ -44,13 +50,23 @@ jobs:
       contents: write
 
     steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: manifest
+
+      - name: Test artifact download
+        run: ls -R
+
       - name: get date
         id: step_one
         run: echo "date=$(date +%F)" >> $GITHUB_ENV
+
       - name: Checkout code
         uses: actions/checkout@v2
+
       - name: Create Release
-        id: create_release
+        id: create-release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -59,3 +75,11 @@ jobs:
           release_name: ${{ env.date }} \#${{ github.run_number }}
           draft: false
           prerelease: false
+
+      - name: Upload release asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create-release.outputs.upload_url }}
+          asset_path:

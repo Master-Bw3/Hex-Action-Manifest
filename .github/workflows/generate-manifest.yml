@@ -23,7 +23,7 @@ jobs:
     steps:
       - name: get date
         id: step_one
-        run: echo "date='test'" >> $GITHUB_ENV
+        run: echo "date=$(date +%F)" >> $GITHUB_ENV
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Create Release
@@ -53,3 +53,6 @@ jobs:
 
       - name: Game Test
         run: mkdir echo "eula=true" >> Fabric/game-test/eula.txt && ./gradlew runGameTest
+
+      - name: Print Game Test Result
+        run: cat ./Fabric/game-test/game-test/test-results/game_test.xml
